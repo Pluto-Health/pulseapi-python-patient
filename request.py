@@ -39,7 +39,9 @@ def main():
     access_token = response.json()['access_token']
 
     # Feel free to change the start and length here
-    query = {'length': 1, 'start': 1}
+    START_INDEX = 1
+    PATIENT_LENGTH = 10
+    query = {'length': PATIENT_LENGTH, 'start': START_INDEX}
     headers = {"Authorization": "Bearer " + access_token}
     patient_list_endpoint = BASE_URL + "/patients"
     response = requests.get(
